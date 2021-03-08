@@ -6,12 +6,12 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
 
 CMD ["/bin/bash"]
 
-FROM builder as development
+FROM builder AS development
 
-ADD . /app
 WORKDIR /app
+COPY . .
 
 RUN bundle install
 RUN npm install
 
-CMD ./docker-entrypoint.sh
+CMD ["bin/rails", "console"]
