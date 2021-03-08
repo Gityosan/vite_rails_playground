@@ -1,51 +1,27 @@
 version: "3.9"
 services:
   rails:
-    build:
-      dockerfile: Dockerfile
-      context: .
-      target: development
-    entrypoint: "bin/rails server --binding=0.0.0.0"
-    depends_on:
-      - vite
-    tty: true
-    stdin_open: true
+    build: .
     ports:
       - "3000:3000"
     environment:
+      RAILS_ENV: development
       VITE_RUBY_HOST: vite
     volumes:
-      - ./app:/app/app
-      - ./bin:/app/bin
-      - ./config:/app/config
-      - ./db/:/app/db
-      - ./lib:/app/lib
-      - ./public:/app/public
-      - ./config.ru:/app/config.ru
-      - ./Gemfile:/app/Gemfile
-      - ./Gemfile.lock:/app/Gemfile.lock
-      - ./Rakefile:/app/Rakefile
+      - .:/app
+    depends_on:
+      - vite
   vite:
     build:
       dockerfile: Dockerfile
       context: .
       target: development
-    entrypoint: "bin/vite dev"
-    tty: true
-    stdin_open: true
+    environment:
+      DEBUG: '*vite*'
+      RAILS_ENV: development
+      VITE_RUBY_HOST: 0.0.0.0
+    command: ./bin/vite dev
     ports:
       - "3036:3036"
     volumes:
-      - ./app:/app/app
-      - ./bin:/app/bin
-      - ./config:/app/config
-      - ./db/:/app/db
-      - ./lib:/app/lib
-      - ./public:/app/public
-      - ./config.ru:/app/config.ru
-      - ./Gemfile:/app/Gemfile
-      - ./Gemfile.lock:/app/Gemfile.lock
-      - ./Rakefile:/app/Rakefile
-      - ./package.json:/app/package.json
-      - ./package-lock.json:/app/package-lock.json
-      - ./vite.config.ts:/app/vite.config.ts
+      - .:/app

@@ -1,24 +1,5 @@
-# README
+# [Vite Rails](https://github.com/ElMassimo/vite_rails) running on Docker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An example on how to configure Docker to run a [Vite.js](http://vitejs.dev/) process alongside a Rails app.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The integration is powered by [Vite Rails][https://github.com/ElMassimo/vite_rails]

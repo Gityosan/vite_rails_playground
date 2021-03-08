@@ -8,9 +8,10 @@ CMD ["/bin/bash"]
 
 FROM builder as development
 
+ADD . /app
 WORKDIR /app
-COPY . .
+
 RUN bundle install
 RUN npm install
 
-CMD ["bin/rails", "console"]
+CMD ./docker-entrypoint.sh

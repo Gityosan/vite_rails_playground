@@ -5,10 +5,4 @@ export default defineConfig({
   plugins: [
     RubyPlugin(),
   ],
-  server: {
-    host: 'vite',
-    hmr: {
-      host: 'vite'
-    }
-  }
 })
