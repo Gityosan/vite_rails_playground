@@ -1,10 +1,7 @@
 version: "3.9"
 services:
   rails:
-    build:
-      dockerfile: Dockerfile
-      context: .
-      target: development
+    build: .
     depends_on:
       - vite
     entrypoint: ./docker-rails.sh
@@ -16,10 +13,7 @@ services:
     volumes:
       - .:/app
   vite:
-    build:
-      dockerfile: Dockerfile
-      context: .
-      target: development
+    build: .
     entrypoint: ./docker-vite.sh
     environment:
       DEBUG: '*vite*'
