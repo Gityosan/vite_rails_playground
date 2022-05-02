@@ -19,4 +19,4 @@ console.log('Vite ⚡️ Rails')
 // ActiveStorage.start()
 
 // Example: Import a stylesheet in app/frontend/index.css
-// import '~/index.css'
+import '~/styles/global.css'

@@ -20,7 +20,8 @@ docker-compose up
 
 ## Debugging 🐞
 
-You can verify that the Vite dev server can be reached from Rails by running:
+Once you have started both services, you can verify that the Vite dev
+server can be reached from Rails by running:
 
 ```bash
 docker-compose run --rm --entrypoint "bin/rails c" rails
