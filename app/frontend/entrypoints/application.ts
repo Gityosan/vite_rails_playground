@@ -1,10 +1,11 @@
+import "~/components/sample"
 // To see this message, add the following to the `<head>` section in your
 // views/layouts/application.html.erb
 //
 //    <%= vite_client_tag %>
 //    <%= vite_javascript_tag 'application' %>
 console.log('Vite ⚡️ Rails')
-
+// alert('a')
 // Example: Load Rails libraries in Vite.
 //
 // import '@rails/ujs'
