@@ -3,7 +3,6 @@
     "sourceCodeDir": "app/frontend",
     "watchAdditionalPaths": ["app/frontend/components/**/*"],
     "autoBuild": true,
-    "publicOutputDir": "vite-dev",
     "port": 3036
   },
   "test": {

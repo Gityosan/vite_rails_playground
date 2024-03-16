@@ -1,7 +1,7 @@
 FROM ruby:3.1.1
 
 # Install nodejs on the default ruby 3 image
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash - && \
       apt-get install -y nodejs build-essential
 
 WORKDIR /app
